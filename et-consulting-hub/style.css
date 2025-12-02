@@ -1,0 +1,20 @@
+/*
+Theme Name: ET Consulting Hub
+Theme URI: https://etconsultinghub.com
+Author: ET Consulting
+Author URI: https://etconsultinghub.com
+Description: A premium, React-powered theme for ET Consulting Hub.
+Version: 1.0.0
+License: All rights reserved.
+*/
+
+/* 
+   This theme uses a React application mounted on the root div.
+   Styles are handled by the built CSS files in /assets.
+*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #F0FDF4; /* Soft White Fallback */
+}

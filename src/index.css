@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 bg-soft-white antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Catchy Aurora Animation */
+.bg-aurora {
+  background: linear-gradient(-45deg, #022c22, #115e59, #0f766e, #022c22);
+  background-size: 400% 400%;
+  animation: aurora-flow 10s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* "Sowing" / Floating Particles */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  bottom: -10px;
+  width: 6px;
+  height: 6px;
+  background: rgba(217, 119, 6, 0.4); /* Gold tint */
+  border-radius: 50%;
+  animation: float-up 15s linear infinite;
+}
+
+.particle:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; opacity: 0.3; transform: scale(1.5); }
+.particle:nth-child(2) { left: 30%; animation-duration: 18s; animation-delay: 2s; opacity: 0.5; }
+.particle:nth-child(3) { left: 50%; animation-duration: 10s; animation-delay: 5s; opacity: 0.4; transform: scale(2); }
+.particle:nth-child(4) { left: 70%; animation-duration: 14s; animation-delay: 1s; opacity: 0.3; }
+.particle:nth-child(5) { left: 90%; animation-duration: 16s; animation-delay: 3s; opacity: 0.6; transform: scale(1.2); }
+
+@keyframes aurora-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+/* Grid overlay for texture */
+.bg-grid-texture {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
